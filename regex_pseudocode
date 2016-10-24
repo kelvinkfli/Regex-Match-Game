@@ -1,0 +1,33 @@
+What the user sees:
+
+    Essential Things:
+    1. A bunch of strings/things to match
+    2. input area for regex
+    3. a submit button
+
+    Things to add later:
+    -scoreboard
+    -cheatsheet
+    -timed score deduction
+    -browser change deduction
+    -hints?
+
+Essential Things:
+
+1. create our own questions
+    -var questionBank = {
+        level1: [ [string1, string2, string3], string1, string2, string3],string1, string2, string3] ]
+        level2: [string4, string5, string6],
+
+    }
+
+2. Input Area:
+    -probably going to be a form
+    -place for user to type regular expression
+    -we want score to be calculated as user types
+    -run a function that updates score
+
+3. Submit Button:
+    -on click, run a function that validates user input (is it right/wrong?)
+    -if right, show next question
+    -if wrong, keep trying

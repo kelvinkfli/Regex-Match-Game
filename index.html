@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regex Matching Game</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="mainScript.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="playButton" type="button">PLAY</button>
+    <div class="content">
+        <ul class="matchArea"></ul>
+        <ul class="skipArea"></ul>
+    </div>
+    <div class="scoreBoard">1000</div>
+    <input class="inputArea"type="text">
+    <div class="message">
+        <div class="messageContent"></div>
+    </div>
+    <button class="powerNoSkip" type="button">Power Up: Remove skips</button>
+    <button class="powerNoCost" type="button">Power Up: Remove letter costs (15s)</button>
+    <br>
+    <br>
+    <h3>Features:</h3>
+    <ul>
+        <li>question set retrieval</li>
+        <li>on-the-fly answer validation</li>
+        <li>letter cost/gain on input</li>
+        <li>power up: remove letter cost</li>
+        <li>power up: remove skip requirements</li>
+        <li>penalty for leaving focus</li>
+        <li>score reduction accounts for copy pasta</li>
+    </ul>
+    <h3>To add:</h3>
+    <ul>
+        <li>stop focusout from triggering on buttons (only on window leave)</li>
+        <li>score change animation</li>
+        <li>combo system</li>
+        <li>leaderboard</li>
+    </ul>
+</body>
+</html>
