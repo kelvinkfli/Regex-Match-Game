@@ -5,13 +5,8 @@ $(function(){
         skipStrings: ["skip1", "skip2", "skip3"]
     };
     var questionSetTwo = {
-<<<<<<< HEAD
         matchStrings: ["pit", "spot", "spate", "slap", "respite"],
         skipStrings: ["pt", "pot", "peat"]
-=======
-        matchStrings: ["sentence4", "sentence5", "sentence6"],
-        skipStrings: ["skip4", "skip5", "skip6"]
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
     };
 
     //Global array variables
@@ -22,10 +17,7 @@ $(function(){
     var previous_length = 0; //this variable holds the previous length of user input
     var current_length = 0; //this variable holds the current length of user input
     var points = 1000; //this variable holds the final score for the user after changes
-<<<<<<< HEAD
     var costTimer = 0; //this variable holds counter for power: remove character costs
-=======
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
 
     //When play button is clicked, present the next question set
     $('.playButton').click(function(){
@@ -35,7 +27,6 @@ $(function(){
     //When input is changed....update score and test for correctness
     $('.inputArea').on('input', function(e){
         scoreCalc(); //update score
-<<<<<<< HEAD
         $('.scoreBoard').html(`${points}`); //update score
         var user_regex_input = new RegExp($('.inputArea').val()); //convert string to regex
         regexTest(questionArray[counter].matchStrings, questionArray[counter].skipStrings, user_regex_input);
@@ -56,12 +47,10 @@ $(function(){
         costTimer = 15;
         setInterval(costCounter, 1000);
     });
-=======
         $('.scoreBoard').html(`${points}`); //push score to html
         var user_regex_input = new RegExp($('.inputArea').val()); //convert string to regex
         regexTest(questionArray[counter].matchStrings, questionArray[counter].skipStrings, user_regex_input);
     })
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
 
     //Local functions to be called when triggered
     function scoreCalc() {
@@ -72,23 +61,18 @@ $(function(){
             var increment = current_length - previous_length;
             for (i = 0; i < increment; i++) { //to account for copy and pasting regex
                 points -= 10;
-<<<<<<< HEAD
                 if (costTimer > 0) { //while power is active, counteract point loss
                     points += 10;
                 }
-=======
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
+
             }
         } else if (current_length < previous_length) { //if user has removed a character, increase points by 5
             var decrement = previous_length - current_length;
             for (i = 0; i < decrement; i++) { //to account for highlight deleting
                 points += 5;
-<<<<<<< HEAD
                 if (costTimer > 0) { //while power is active, counteract point gain
                     points -= 5;
                 }
-=======
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
             }
         }
         previous_length = current_length; //give previous_length a new value = current_length so tracking can start over
@@ -115,28 +99,21 @@ $(function(){
             console.log('Regex does not meet requirements');
         } else { //no errors means regex is correct
             console.log('Regex meets all requirements');
-<<<<<<< HEAD
             $('.messageContent').html('You win!');
             $('.message').css('opacity', '1').css('z-index', '1');
-=======
             $('.message').html('You win!')
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
         }
     }
     function nextQuestionSet() {
         counter += 1;
         $('.matchArea').empty();
-<<<<<<< HEAD
         $('.skipArea').empty();
-=======
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
         //append all the match strings to the textarea
         for (i = 0; i < questionArray[counter].matchStrings.length; i++) {
             $(`<li>${questionArray[counter].matchStrings[i]}</li>`).appendTo('.matchArea');
         }
         //append all the skip strings to the textarea
         for (i = 0; i < questionArray[counter].skipStrings.length; i++) {
-<<<<<<< HEAD
             $(`<li>${questionArray[counter].skipStrings[i]}</li>`).appendTo('.skipArea');
         }
     }
@@ -154,11 +131,9 @@ $(function(){
 })
 
 //regex input history
-=======
             $(`<li>${questionArray[counter].skipStrings[i]}</li>`).appendTo('.matchArea');
         }
     }
 })
 
 //regex input history
->>>>>>> 5fe40a5b23fcfff1ab5cbd78405e082c20a535b4
