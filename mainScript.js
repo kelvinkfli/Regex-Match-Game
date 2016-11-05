@@ -47,10 +47,6 @@ $(function(){
       costTimer = 15;
       setInterval(costCounter, 1000);
   });
-      $('.scoreBoard').html(`${points}`); //push score to html
-      var user_regex_input = new RegExp($('.inputArea').val()); //convert string to regex
-      regexTest(questionArray[counter].matchStrings, questionArray[counter].skipStrings, user_regex_input);
-  })
 
   //Local functions to be called when triggered
   function scoreCalc() {
@@ -128,6 +124,6 @@ $(function(){
   function costCounter() {
       costTimer -= 1;
   }
-}
+});
 
 //regex input history
