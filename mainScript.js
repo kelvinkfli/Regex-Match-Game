@@ -23,6 +23,7 @@ $(function(){
   $('.playButton').click(function(){
      $('.hero-buttons').addClass('play-fade');
      $('.rules-section').addClass('rules-fade');
+     $('.screen').css('display','flex');
      setTimeout(function(){
         $('.rules-section').css('display', 'none');
         $('.hero-buttons').css('display','none');

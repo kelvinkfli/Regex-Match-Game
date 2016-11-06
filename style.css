@@ -150,6 +150,7 @@ body {
    opacity: 0;
    visibility: hidden;
    transition: 1.2s;
+   display: none;
 }
 .user-bar {
    width: 100%;
