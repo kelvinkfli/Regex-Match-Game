@@ -21,8 +21,18 @@ $(function(){
 
   //When play button is clicked, present the next question set
   $('.playButton').click(function(){
+     $('.hero-buttons').addClass('play-fade');
+     $('.rules-section').addClass('rules-fade');
+     setTimeout(function(){
+        $('.rules-section').css('display', 'none');
+        $('.hero-buttons').css('display','none');
+     }, 0);
       nextQuestionSet();
   });
+
+  $('.nextButton').click(function(){
+     nextQuestionSet();
+ })
 
   //When input is changed....update score and test for correctness
   $('.inputArea').on('input', function(e){
@@ -98,6 +108,7 @@ $(function(){
           $('.messageContent').html('You win!');
           $('.message').css('opacity', '1').css('z-index', '1');
           $('.message').html('You win!')
+          $('.inputArea').attr('disabled','disabled');
       }
   }
   function nextQuestionSet() {

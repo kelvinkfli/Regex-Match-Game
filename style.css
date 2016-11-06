@@ -133,21 +133,293 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 body {
-  max-width: 1080px;
-  margin: 0 auto;
-  height: 100vh;
   position: relative;
   font-size: 15px; }
 
+@font-face {
+    font-family: Ranchers;
+    src: url('ranchers/Ranchers-Regular.ttf');
+}
+.screen {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   max-width: 750px;
+   margin: 0 auto;
+}
+
+.inputArea {
+   width: 100%;
+   margin-top: 3%;
+   border: 2px solid black;
+   border-radius: 5px;
+   padding: 1%;
+   text-align: center;
+   max-width: 750px;
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+.inputArea::-webkit-input-placeholder {
+   font-family: Ranchers;
+   letter-spacing: 2px;
+   text-align: center;
+}
+.scoreBoard {
+   font-size: 4rem;
+}
+
+.score-title {
+   text-align: center;
+   text-transform: uppercase;
+   font-family: Ranchers;
+   font-size: 0.7rem;
+}
+.score-title h1 {
+   margin: 0;
+   font-size: 1rem;
+   letter-spacing: 3px;
+   opacity: 0.5;
+}
+
+.skip-section, .match-section {
+   flex: 1 0 50%;
+   width: 100%;
+}
 .content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; }
-  .content ul {
-    flex: 1 0 50;
-    align-self: center; }
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 7px;
+}
+.content h2 {
+   text-align: center;
+   margin: 8px 0;
+   text-transform: uppercase;
+   font-family: Ranchers;
+   font-size: 1rem;
+   letter-spacing: 3px;
+}
 
+.content ul {
+   list-style-type: none;
+   border: 2px solid black;
+   border-radius: 10px;
+   padding: 0;
+   margin: 0 10px;
+    flex: 1 0 calc(50% - 20px);
+    text-align: center;
+}
+
+.content ul li {
+   padding: 3% 0;
+}
 .messageContent {
   font-size: 1.5rem; }
 
-/*# sourceMappingURL=style.css.map */
+.hero-section {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.hero-page {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   font-size: 0.8rem;
+   max-width: 750px;
+   width: 100%;
+   margin: 0 auto;
+   padding: 0 7px;
+}
+
+.hero-page h2 {
+   text-transform: uppercase;
+   font-family: Ranchers;
+   font-size: 1rem;
+   letter-spacing: 2px;
+   text-align: center;
+}
+
+.hero-page h1 {
+   text-transform: uppercase;
+   max-width: 750px;
+   font-family: Ranchers;
+   color: black;
+   letter-spacing: 5px;
+   font-size: 4rem;
+   text-align: center;
+   margin: 0;
+}
+
+.tagline {
+   /*margin: 0 0 10% 0;*/
+   letter-spacing: 6px;
+}
+
+.title {
+   margin: 3% 0 1% 0;
+}
+.description {
+   width: 100%;
+   margin: 0 0 3% 0;
+   max-width: 750px;
+   line-height: 300%;
+}
+.description span {
+   border-bottom: 1px solid black;
+   font-weight: bolder;
+}
+.hero-page h1 span {
+   margin: 0 10px;
+   font-size: 1.2rem;
+}
+
+.score-info, .power-info {
+   display: flex;
+   flex-wrap: wrap;
+   border: 2px solid black;
+   border-radius: 10px;
+   margin-bottom: 4%;
+}
+
+.margin-bottom {
+   margin-top: 5%;
+   /*color: blue;*/
+}
+
+.score-info div {
+   flex: 1 0 calc(33.33% - 20px);
+   margin: 0 10px;
+   /*border: 1px solid black;*/
+   padding: 4% 2%;
+
+}
+.power-info div {
+   flex: 1 0 calc(50% - 20px);
+   margin: 0 10px;
+   padding: 5% 2%;
+}
+
+.info-display {
+   display: flex;
+   /*flex-wrap: wrap;*/
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+
+.info-display p {
+   margin: 0;
+   font-family: Ranchers;
+   font-size: 1.5rem;
+   position: relative;
+}
+
+.info-display i {
+   margin-right: 10%;
+   font-size: 1.2rem;
+}
+
+p.skipp {
+   margin-right: 10%;
+}
+
+.bob {
+   animation: bob 2s infinite;
+}
+
+.exit {
+   position: relative;
+   animation: bob2 2s infinite;
+}
+i.lock {
+   position: absolute;
+   top: 50%;
+   left: 120%;
+   transform: translate(-50%, -50%);
+   font-size: 2rem;
+   color: rgba(50,50,50,0.7);
+}
+.redex {
+   position: absolute;
+   width: 120%;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 120%;
+}
+
+.redextwo {
+   position: absolute;
+   width: 90%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 120%;
+}
+
+i.clock {
+   margin-right: 5px;
+}
+
+.clock-span {
+   font-family: Ranchers;
+   /*color: blue;*/
+}
+
+i.clock-arrow {
+   margin-left: 10%;
+}
+
+@keyframes bob {
+   0% {transform: translateY(1px);}
+   50% {transform: translateY(-5px);}
+   100% {transform: translateY(1px);}
+}
+/*font-family: 'VT323', monospace;*/
+
+@keyframes bob2 {
+      0% {transform: translateY(2px);}
+      50% {transform: translateY(-4px);}
+      100% {transform: translateY(2px);}
+}
+
+.playButton {
+   background: grey;
+   border: none;
+   padding: 15px 40px;
+   text-transform: uppercase;
+   font-size: 1.7rem;
+   font-family: Ranchers;
+   letter-spacing: 4px;
+   border-bottom: 5px solid black;
+   border-radius: 8px;
+   /*margin-bottom: 45%;*/
+   color: white;
+}
+
+.rules {
+   margin: 6% 0 0 0;
+}
+.rules-section {
+   /*transition: 2s;*/
+}
+.rules-fade {
+   opacity: 0;
+   transform: translate(30%, -5%);
+}
+
+.hero-buttons {
+   /*transition: 2s;*/
+}
+.play-fade {
+   opacity: 0;
+   transform: translate(-300%, 25%);
+}
