@@ -82,18 +82,27 @@
          <div class="scoreBoard">1000</div>
       </div>
       <div class="content">
-          <div class="match-section">
-             <h2>match</h2>
-             <ul class="matchArea"></ul>
+         <div class="requirements">
+            <div class="match-section">
+              <h2>match</h2>
+              <ul class="matchArea"></ul>
+           </div>
+          <div class="skip-section">
+             <h2>skip</h2>
+              <ul class="skipArea"></ul>
           </div>
-         <div class="skip-section">
-            <h2>skip</h2>
-             <ul class="skipArea"></ul>
          </div>
-          <input class="inputArea" type="text" placeholder="Regex goes here...">
-      </div>
-      <div class="message">
-          <div class="messageContent"></div>
+         <div class="message">
+             <div class="messageContent"></div>
+             <button class="nextButton">Next Round</button>
+         </div>
+         <div class="user-bar">
+            <input class="inputArea" type="text" placeholder="Regex goes here...">
+            <div class="interaction-wrapper">
+               <button class="powerNoSkip" type="button"><p class="relative">Skip <span><img class="redextwo" src="assets/red.png" alt=""></span></p></button>
+               <button class="powerNoCost" type="button"><i class="fa fa-clock-o"></i></button>
+            </div>
+         </div>
       </div>
    </section>
     <!-- <button class="powerNoSkip" type="button">Power Up: Remove skips</button> -->

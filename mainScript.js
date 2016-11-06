@@ -26,12 +26,17 @@ $(function(){
      setTimeout(function(){
         $('.rules-section').css('display', 'none');
         $('.hero-buttons').css('display','none');
-     }, 0);
+        $('.screen').css('opacity', '1');
+        $('.screen').css('visibility', 'visible');
+     }, 1500);
       nextQuestionSet();
   });
 
   $('.nextButton').click(function(){
      nextQuestionSet();
+     $('.message').removeClass('message-fixed');
+     $('.inputArea').removeAttr('disabled');
+     $('.inputArea').val('');
  })
 
   //When input is changed....update score and test for correctness
@@ -49,13 +54,19 @@ $(function(){
 
   //when clicked, remove skip requiremenets
   $('.powerNoSkip').click(function() {
-      clearSkip();
+     $('.skip-section').addClass('skip-clear');
+     $('.powerNoSkip').addClass('powerSkip-clear');
+     setTimeout(function(){
+        clearSkip();
+        $('.skip-section').css('display', 'none');
+     }, 1200)
   });
 
   //when clicked, remove letter costs/gains
   $('.powerNoCost').click(function(){
       costTimer = 15;
       setInterval(costCounter, 1000);
+      $('.powerNoCost').addClass('powerCost-clear');
   });
 
   //Local functions to be called when triggered
@@ -106,8 +117,9 @@ $(function(){
       } else { //no errors means regex is correct
           console.log('Regex meets all requirements');
           $('.messageContent').html('You win!');
-          $('.message').css('opacity', '1').css('z-index', '1');
-          $('.message').html('You win!')
+         //  $('.message').css('opacity', '1').css('z-index', '1');
+         //  $('.message').html('You win!')
+         $('.message').addClass('message-fixed');
           $('.inputArea').attr('disabled','disabled');
       }
   }
