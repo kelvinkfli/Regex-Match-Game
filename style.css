@@ -136,6 +136,9 @@ body {
   position: relative;
   font-size: 15px; }
 
+p {
+   font-size: 17px;
+}
 @font-face {
     font-family: Ranchers;
     src: url('ranchers/Ranchers-Regular.ttf');
@@ -306,6 +309,9 @@ body {
 }
 
 .hero-section {
+   max-width: 800px;
+   margin: 0 auto;
+   /*background: white;*/
    display: flex;
    justify-content: center;
    align-items: center;
@@ -327,7 +333,7 @@ body {
 .hero-page h2 {
    text-transform: uppercase;
    font-family: Ranchers;
-   font-size: 1rem;
+   font-size: 1.4rem;
    letter-spacing: 2px;
    text-align: center;
 }
@@ -349,11 +355,11 @@ body {
 }
 
 .title {
-   margin: 3% 0 1% 0;
+   margin: 5% 0 7% 0;
 }
 .description {
    width: 100%;
-   margin: 0 0 3% 0;
+   margin: 0 0 6% 0;
    max-width: 750px;
    line-height: 300%;
 }
@@ -371,7 +377,7 @@ body {
    flex-wrap: wrap;
    border: 2px solid black;
    border-radius: 10px;
-   margin-bottom: 4%;
+   margin-bottom: 7%;
 }
 
 .margin-bottom {
@@ -379,14 +385,17 @@ body {
    /*color: blue;*/
 }
 
-.score-info div {
+.score-info .infoo {
    flex: 1 0 calc(33.33% - 20px);
    margin: 0 10px;
    /*border: 1px solid black;*/
    padding: 4% 2%;
-
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
-.power-info div {
+
+.power-info .infoo {
    flex: 1 0 calc(50% - 20px);
    margin: 0 10px;
    padding: 5% 2%;
@@ -491,7 +500,7 @@ i.clock-arrow {
 }
 
 .rules {
-   margin: 6% 0 0 0;
+   margin: 10% 0 0 0;
 }
 .rules-section {
    transition: 2s;
@@ -608,4 +617,19 @@ i.clock-arrow {
    50% {transform: rotate(5deg);}
    75% {transform: rotate(-5deg);}
    100% {transform: rotate(5deg);}
+}
+
+@media (max-width: 500px) {
+   .power-info .infoo {
+      flex: 1 0 calc(100% - 20px);
+   }
+   .score-info .infoo {
+      flex: 1 0 calc(100% - 20px);
+   }
+   .title h1 {
+      font-size: 2.3rem;
+   }
+   .title p {
+      font-size: 0.7rem;
+   }
 }

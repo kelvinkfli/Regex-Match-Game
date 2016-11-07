@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regex Matching Game</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://use.fontawesome.com/663abb47c2.js"></script>
@@ -13,7 +14,7 @@
    <section class="hero-section">
       <div class="hero-page">
          <div class="title">
-            <h1><span>^</span>match <span>/s</span> that<span>/s</span> regex<span>$</span></h1>
+            <h1><span>^</span>match<span>/s</span> that <span>/s</span>regex<span>$</span></h1>
             <p class="tagline">Test your knowledge of regular expressions!</p>
          </div>
          <div class="hero-buttons">
@@ -26,7 +27,7 @@
             </div>
             <h2>how is score calculated?</h2>
             <div class="score-info">
-               <div class="score-decrease">
+               <div class="score-decrease infoo">
                   <p>You will be deducted 10 points for every keypress.</p>
                   <div class="info-display">
                      <i class="fa fa-hand-o-down bob"></i>
@@ -34,7 +35,7 @@
                      <p>-10</p>
                   </div>
                </div>
-               <div class="score-increase">
+               <div class="score-increase infoo">
                   <p>You will be returned 5 points for every backspace.</p>
                   <div class="info-display">
                      <i class="fa fa-hand-o-left bob"></i>
@@ -42,7 +43,7 @@
                      <p>+5</p>
                   </div>
                </div>
-               <div class="score-browser">
+               <div class="score-browser infoo">
                   <p>You will be deducted 50 points if you leave the browser.</p>
                   <div class="info-display">
                      <i class="fa fa-desktop exit"><span><img class="redex" src="assets/red.png" alt=""></span></i>
@@ -53,7 +54,7 @@
             </div>
             <h2>stuck? try some power-ups</h2>
             <div class="power-info">
-               <div class="powerup">
+               <div class="powerup infoo">
                   <p>The NoSkip power-up eliminates skip requirements for one round.</p>
                   <div class="info-display">
                      <p class="skipp">Skip</p>
@@ -61,7 +62,7 @@
                      <p>Skip <span><img class="redextwo" src="assets/red.png" alt=""></span></p>
                   </div>
                </div>
-               <div class="powerup">
+               <div class="powerup infoo">
                   <p>The NoCost power-up removes all letter costs for 15 seconds. Make it count!</p>
                   <div class="info-display">
                      <i class="fa fa-clock-o clock"></i><span class="clock-span">15s</span>
