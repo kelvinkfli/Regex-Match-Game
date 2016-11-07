@@ -1,16 +1,60 @@
 $(function(){
   //The objects that hold all the question sets
   var questionSetOne = {
-      matchStrings: ["string1", "string2", "string3"],
-      skipStrings: ["skip1", "skip2", "skip3"]
+      matchStrings: ["abc", "abcc", "abccd"],
+      skipStrings: ["ape", "ale", "aye"]
   };
   var questionSetTwo = {
+      matchStrings: ["cat.", "896.", "?=+."],
+      skipStrings: ["cork1", "cashew17", "dog4"]
+  };
+  var questionSetThree = {
+      matchStrings: ["can", "pan", "fan"],
+      skipStrings: ["dan", "ran", "man"]
+  };
+  var questionSetFour = {
+      matchStrings: ["sos", "lol", "pop"],
+      skipStrings: ["ssy", "lla", "pps"]
+  };
+  var questionSetFive = {
+      matchStrings: ["regggex", "reggggex", "reggex"],
+      skipStrings: ["regex"]
+  };
+  var questionSetSix = {
+      matchStrings: ["Code: coolest"],
+      skipStrings: ["Free Food: not coolest", "What coolest is cool?"]
+  };
+  var questionSetSeven = {
+      matchStrings: ["I eat pizza", "I eat chicken"],
+      skipStrings: ["I eat burritos", "I eat sauce"]
+  };
+  var questionSetEight = {
       matchStrings: ["pit", "spot", "spate", "slap", "respite"],
       skipStrings: ["pt", "pot", "peat"]
   };
+  var questionSetNine = {
+      matchStrings: ["rap them", "tapeth", "atph", "wrap", "87ap9th", "apothecary"],
+      skipStrings: ["aleht", "tarpth", "peth", "apples", "shape the"]
+  };
+  var questionSetTen = {
+      matchStrings: ["affgjkin", "rafgkahe", "bafghk", "baffgkit", "baffg kit"],
+      skipStrings: ["fgok", "affgm", "afg.K", "afffhgk"]
+  };
+  var questionSetEleven = {
+      matchStrings: ["file_record_integer.pdf", "file_07198230.pdf", "testfile_boo.pdf.tmp"],
+      skipStrings: ["string_file.pdf.tmp"]
+  };
+  var questionSetTwelve = {
+      matchStrings: ["assumes word sense. Within does the clustering. In the but when? 'It was hard to tell he arrive. After she had mess! He did not let it wasn't hers!' She replied always thought so.) Then"],
+      skipStrings: ["in the U.S.A., people often John?', he often thought, but weighed 17.5 grams well ... they'd better not A.I. has long been a very like that' he thought but W. G. Grace never had much"]
+  };
+  var questionSetEnd = {
+      matchStrings: ["person@thing.com", "first.last@otherthing.org", "user-name@lol.ca"],
+      skipStrings: ["almost", "there", ";)"]
+  };
 
   //Global array variables
-  var questionArray = [questionSetOne, questionSetTwo]; //Array to get an index of all questions
+  var questionArray = [questionSetOne, questionSetTwo, questionSetThree, questionSetFour, questionSetFive, questionSetSix, questionSetSeven, questionSetEight, questionSetNine, questionSetTen, questionSetEleven, questionSetTwelve]; //Array to get an index of all questions
   var counter = -1; //Counter to loop through the array above
 
   //Global score calculator variables
@@ -38,6 +82,8 @@ $(function(){
      $('.message').removeClass('message-fixed');
      $('.inputArea').removeAttr('disabled');
      $('.inputArea').val('');
+     $('.skip-section').css('display', 'flex');
+     $('.skip-section').removeClass('skip-clear');
  })
 
   //When input is changed....update score and test for correctness
@@ -46,6 +92,26 @@ $(function(){
       $('.scoreBoard').html(`${points}`); //update score
       var user_regex_input = new RegExp($('.inputArea').val()); //convert string to regex
       regexTest(questionArray[counter].matchStrings, questionArray[counter].skipStrings, user_regex_input);
+      $('.scoreBoard').removeClass('shakeAnimation');
+      setTimeout(function(){
+         $('.scoreBoard').addClass('shakeAnimation');
+      }, 1);
+      if (points == 500) {
+         $('.match-section').addClass('fade-slide-left');
+         $('.skip-section').addClass('fade-slide-right');
+         $('.score-title').addClass('fade-slide-right');
+         $('.user-bar').addClass('fade-slide-left');
+         $('.end-screen').css('display', 'flex');
+         $('.inputArea').attr('disabled','disabled');
+         setTimeout(function(){
+            $('.match-section, .skip-section, .score-title, .user-bar').css('display', 'none');
+            $('.end-screen').addClass('end-screen-fix');
+         },1800);
+         // $('.end-screen').css('display', 'block');
+         // setTimeout(function(){
+         //    $('.end-screen').addClass('end-screen-fix');
+         // }, 500);
+      }
   });
 
   //When user diverts focus from page, decrease score

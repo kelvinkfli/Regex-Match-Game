@@ -197,6 +197,10 @@ body {
    font-size: 4rem;
 }
 
+.shakeAnimation {
+   animation: shake 0.2s 1;
+}
+
 .score-title {
    text-align: center;
    text-transform: uppercase;
@@ -254,7 +258,7 @@ body {
 }
 
 .content ul li {
-   padding: 3% 0;
+   padding: 1.5% 0;
 }
 .message {
    position: absolute;
@@ -354,7 +358,7 @@ body {
    line-height: 300%;
 }
 .description span {
-   border-bottom: 1px solid black;
+   /*border-bottom: 1px solid black;*/
    font-weight: bolder;
 }
 .hero-page h1 span {
@@ -524,4 +528,84 @@ i.clock-arrow {
 
 *:focus {
    outline: none;
+}
+
+.match-section h2 {
+   color: green;
+}
+.skip-section h2 {
+   color: red;
+}
+
+.green {
+   color: green;
+}
+.red {
+   color: red;
+}
+
+.end-screen {
+   /*background: rgba(0,0,0,0.4);*/
+   max-width: 750px;
+   margin: 0 auto;
+   display: none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   visibility: hidden;
+   transition: 1.5s;
+   transform: translateY(100%);
+}
+.end-screen p {
+   /*padding: 115px;*/
+   /*width: 100%;*/
+   margin: 0;
+   text-align: center;
+   text-transform: uppercase;
+   font-family: Ranchers;
+   font-size: 2rem;
+}
+.end-screen div {
+   font-family: Ranchers;
+   margin-bottom: 25px;
+}
+.end-screen a {
+   cursor: pointer;
+   text-decoration: none;
+   background: grey;
+    border: none;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-family: Ranchers;
+    letter-spacing: 4px;
+    border-bottom: 5px solid black;
+    border-radius: 8px;
+    color: white;
+}
+.end-screen-fix {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0);
+}
+.fade-slide-left {
+   opacity: 0;
+   visibility: hidden;
+   transform: translate(-100%, 20%);
+   transition: 1.9s;
+}
+.fade-slide-right {
+   opacity: 0;
+   visibility: hidden;
+   transform: translate(100%, -20%);
+   transition: 1.9s;
+}
+
+@keyframes shake {
+   0% {transform: rotate(5deg);}
+   25% {transform: rotate(-5deg);}
+   50% {transform: rotate(5deg);}
+   75% {transform: rotate(-5deg);}
+   100% {transform: rotate(5deg);}
 }
