@@ -300,6 +300,7 @@ p {
 .message-fixed {
    visibility: visible;
    opacity: 1;
+   z-index: 15;
 }
 .messageContent {
   font-size: 4.5rem;
@@ -386,7 +387,7 @@ p {
 }
 
 .score-info .infoo {
-   flex: 1 0 calc(33.33% - 20px);
+   flex: 1 0 calc(50% - 20px);
    margin: 0 10px;
    /*border: 1px solid black;*/
    padding: 4% 2%;

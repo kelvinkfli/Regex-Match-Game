@@ -62,7 +62,7 @@ $(function(){
   var current_length = 0; //this variable holds the current length of user input
   var points = 1000; //this variable holds the final score for the user after changes
   var costTimer = 0; //this variable holds counter for power: remove character costs
-
+  var upscore = 0;
   //When play button is clicked, present the next question set
   $('.playButton').click(function(){
      $('.hero-buttons').addClass('play-fade');
@@ -90,13 +90,15 @@ $(function(){
   $('.inputArea').on('input', function(e){
       scoreCalc(); //update score
       $('.scoreBoard').html(`${points}`); //update score
-      var user_regex_input = new RegExp($('.inputArea').val()); //convert string to regex
+      console.log($('.inputArea').val());
+      var user_regex_input = new RegExp('^' +  $('.inputArea').val()); //convert string to regex
+      console.log(user_regex_input);
       regexTest(questionArray[counter].matchStrings, questionArray[counter].skipStrings, user_regex_input);
       $('.scoreBoard').removeClass('shakeAnimation');
       setTimeout(function(){
          $('.scoreBoard').addClass('shakeAnimation');
       }, 1);
-      if (points == 500) {
+      if (points == 0) {
          $('.match-section').addClass('fade-slide-left');
          $('.skip-section').addClass('fade-slide-right');
          $('.score-title').addClass('fade-slide-right');
@@ -164,10 +166,14 @@ $(function(){
   function regexTest(match_array, skip_array, input) {
       var match = 0; //this variable tracks the number of match errors
       var skip = 0; //this variable tracks the number of skip errors
+      console.log(input.test(match_array[1]));
 
       for (var x = 0, y = match_array.length; x < y; x++) {
           if (input.test(match_array[x]) == false) { //if any of the strings_to_match are false, increase match error count
               match += 1;
+          }
+          if (input == "/^/") {
+             match += 1;
           }
       }
 
@@ -182,14 +188,27 @@ $(function(){
           console.log('number of skip errors: ' + skip);
           console.log('Regex does not meet requirements');
       } else { //no errors means regex is correct
-          console.log('Regex meets all requirements');
-          $('.messageContent').html('You win!');
-         //  $('.message').css('opacity', '1').css('z-index', '1');
-         //  $('.message').html('You win!')
+         upscore = 0;
+         console.log('Regex meets all requirements');
+         $('.messageContent').html('You win!');
          $('.message').addClass('message-fixed');
-          $('.inputArea').attr('disabled','disabled');
+         $('.inputArea').attr('disabled','disabled');
+         myLoop();
+         upscore = 0;
       }
   }
+
+  function myLoop() {
+     setTimeout(function(){
+        upscore++;
+        points++;
+        $('.scoreBoard').html(points);
+        if (upscore < 50) {
+           myLoop();
+        }
+     }, 28)
+  }
+
   function nextQuestionSet() {
       counter += 1;
       $('.matchArea').empty();
@@ -204,7 +223,7 @@ $(function(){
       }
   }
   function scoreFocus() {
-      points -= 50; //decrease points by 50
+      points -= 100; //decrease points by 50
       $('.scoreBoard').html(`${points}`); //update score
   }
   function clearSkip() {
